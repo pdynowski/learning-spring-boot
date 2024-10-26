@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <link href = "css/styles.css" rel = "stylesheet"/>
+      <title>Task Manager</title>
+   </head>
+   <body>
+  		<table>
+  			<thead>
+  				<tr>
+	  				<th>Task ID</th>
+	  				<th>Task Name</th>
+	  				<th>Task Description</th>
+	  				<th>Status</th>
+	  				<th>Project ID</th>
+	  			</tr>
+  			</thead>
+	      <tr th:each="task : ${tasks}">
+	        <td th:text="${task.id}">1</td>
+	        <td><a href="#" th:text="${task.taskName}">TaskName ...</a></td>
+	        <td th:text="${task.description}">TaskDescription ...</td>
+	        <td th:text="${task.status}">TaskStatus ...</td>
+	        <td th:text="${task.projectId}">ProjectId ...</td>
+	      </tr>
+	  	</table>
+   </body>
+</html>
